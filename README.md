@@ -179,7 +179,7 @@ During inference:
 
 | Metric | Value |
 |---|---|
-| Dice Score | **0.7208** |
+| Dice Score | **0.7421** |
 
 ### Post-processing
 A **3×3 morphological opening operation** is applied to remove small noisy predictions.
