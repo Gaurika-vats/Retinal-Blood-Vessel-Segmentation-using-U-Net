@@ -203,8 +203,9 @@ Binary Prediction → Morphological Opening → Final Mask
 - **Dice loss complements BCE loss** by directly optimizing the segmentation overlap metric.
 - **FOV masking is necessary during evaluation**, since pixels outside the retina should not influence segmentation metrics.
 - **Morphological post-processing removes isolated noise**, improving the final segmentation mask.
-- The main limitation of the dataset is **its small size (20 training images)**, which constrains achievable generalization.
-
+- The main limitation of the dataset is its **small size (20 training images)**, which restricts variability and limits generalization.
+- The implemented model uses a **baseline U-Net architecture**, which is widely used for biomedical segmentation and provides strong performance on small datasets.
+- Further improvements could be achieved using **advanced architectures such as Attention U-Net, Residual U-Net, or transformer-based segmentation models**, which improve feature propagation and better capture fine vascular structures.
 ---
 
 # How to Run
@@ -212,7 +213,7 @@ Binary Prediction → Morphological Opening → Final Mask
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/retinal-vessel-segmentation.git
+git clone https://github.com/Gaurika-vats/Retinal-Blood-Vessel-Segmentation-using-U-Net.git
 cd retinal-vessel-segmentation
 ```
 
