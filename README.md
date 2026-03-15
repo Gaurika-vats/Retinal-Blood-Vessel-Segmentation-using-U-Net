@@ -184,7 +184,7 @@ During inference:
 ### Post-processing
 A **3×3 morphological closing operation** is applied to reconnect fragmented vessel segments and preserve thin vascular structures while suppressing small gaps.
 ```
-Binary Prediction → Morphological Opening → Final Mask
+Binary Prediction → Morphological Closing → Final Mask
 ```
 
 ### Qualitative Example
@@ -218,7 +218,7 @@ Binary Prediction → Morphological Opening → Final Mask
 
 ```bash
 git clone https://github.com/Gaurika-vats/Retinal-Blood-Vessel-Segmentation-using-U-Net.git
-cd retinal-vessel-segmentation
+cd Retinal-Blood-Vessel-Segmentation-using-U-Net
 ```
 
 ### 2. Install Dependencies
@@ -256,13 +256,17 @@ best_unet_drive_model.pth
 
 ### 5. Evaluate the Model
 
+After training completes, the best model checkpoint will be saved as:
+
+best_unet_drive_model.pth
+
 Load the checkpoint and run the evaluation section of the notebook to compute the Dice score and visualize predictions.
 
 ```python
-model.load_state_dict(torch.load("best_unet_drive_model.pth"))
+model = UNet(n_channels=1, n_classes=1).to(device)
+model.load_state_dict(torch.load("best_unet_drive_model.pth", map_location=device))
 model.eval()
 ```
-
 ---
 
 **Environment**
