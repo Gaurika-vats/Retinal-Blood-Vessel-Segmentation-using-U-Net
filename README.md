@@ -27,6 +27,9 @@ The dataset also provides **Field-of-View (FOV) masks** which identify valid ret
 
 The dataset is not included in this repository. Users must download it separately.
 
+### Example DRIVE Image and Annotation
+
+![DRIVE Dataset Example](drive-data.png)
 ---
 
 # Data Pre-Processing
@@ -191,7 +194,9 @@ Binary Prediction → Morphological Opening → Final Mask
 |---|---|---|
 | Retinal image | Expert annotated vessels | Model segmented vessels |
 
-(Example visualization included in notebook output)
+### Example Segmentation Output
+
+![Segmentation Result](results/inference-visualization.png)
 
 ---
 
