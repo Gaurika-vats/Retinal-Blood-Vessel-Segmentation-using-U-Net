@@ -171,7 +171,7 @@ Evaluation is performed on the **20 test images** of the DRIVE dataset.
 
 During inference:
 
-- Sigmoid probabilities are thresholded at **0.5**
+- Sigmoid probabilities are thresholded at **0.50**, which produced the best Dice score during empirical threshold tuning.
 - Morphological **closing** with a 3×3 kernel reconnects fragmented vessel segments and reduces small gaps in thin vessels
 - FOV masks are applied before computing metrics
 
@@ -202,7 +202,7 @@ Binary Prediction → Morphological Closing → Final Mask
 # Key Insights
 
 - **Green channel extraction significantly improves vessel visibility**, as retinal vasculature is most contrasted in this channel.
-- **Frangi filtering provides strong structural priors** for tubular structures, making thin vessels easier for the network to learn.
+- **Frangi filtering** enhances vessel-like tubular structures and improves vessel contrast, helping the network learn vascular patterns more effectively.
 - **Vessel-balanced patch sampling is essential** due to extreme class imbalance; random sampling would produce mostly empty patches.
 - **Dice loss complements BCE loss** by directly optimizing the segmentation overlap metric.
 - **FOV masking is necessary during evaluation**, since pixels outside the retina should not influence segmentation metrics.
