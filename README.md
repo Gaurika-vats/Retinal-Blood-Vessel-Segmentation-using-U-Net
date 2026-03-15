@@ -171,8 +171,8 @@ Evaluation is performed on the **20 test images** of the DRIVE dataset.
 
 During inference:
 
-- Sigmoid probabilities are thresholded at **0.62**
-- Morphological opening removes isolated false positives
+- Sigmoid probabilities are thresholded at **0.5**
+- Morphological **closing** with a 3×3 kernel reconnects fragmented vessel segments and reduces small gaps in thin vessels
 - FOV masks are applied before computing metrics
 
 ### Segmentation Performance
@@ -182,8 +182,7 @@ During inference:
 | Dice Score | **0.7421** |
 
 ### Post-processing
-A **3×3 morphological opening operation** is applied to remove small noisy predictions.
-
+A **3×3 morphological closing operation** is applied to reconnect fragmented vessel segments and preserve thin vascular structures while suppressing small gaps.
 ```
 Binary Prediction → Morphological Opening → Final Mask
 ```
