@@ -196,7 +196,7 @@ Binary Prediction → Morphological Opening → Final Mask
 
 ### Example Segmentation Output
 
-![Segmentation Result](results/inference-visualization.png)
+![Segmentation Result](result/inference-visualization.png)
 
 ---
 
